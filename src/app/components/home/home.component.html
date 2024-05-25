@@ -1,0 +1,43 @@
+<div class="navbar">
+    <div class="container">
+      <div class="navbar-grid">
+        <div class="navbar-links">
+          <a routerLink="/home">Home</a>
+          <a routerLink="/displayQuestions">Curious</a>
+          <a routerLink="/register">Registration</a>
+          <a routerLink="/questions">Ask a question</a>
+          <a routerLink="/adminTools">Admin Tools</a>
+        </div>
+        <div class="navbar-search">
+          <input type="text" placeholder="Search">
+          <button type="submit">🔍</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="welcome-message">
+    <div class="container">
+      <h1>Cork </h1>
+      <a routerLink="/displayQuestions" class="button-welcome">Looking for answers ?? </a>
+    </div>
+  </div>
+  
+  <div class="diy-container">
+    <div class="container">
+      <h1 class="diy-container-h1">Frequently Asked Questions</h1>
+      <div class="diy-question" *ngFor="let question of DIYQuestions; let idx = index" (click)="showAnswer(idx)">
+        <h3 class="question">{{question.question}}</h3>
+        <div class="answer" [ngClass]="{'hidden': question.answerHidden}">
+          <p>{{question.answer}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <div class="container">
+      © 2024 Emmanuel Adekunle
+    </div>
+  </div>
+  
